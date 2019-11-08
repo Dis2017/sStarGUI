@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="67181fca-1e00-4283-8121-c67290e6e12a" name="默认的" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Input/KeyEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Core/Decorator.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Core/Decorator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Core/DecoratorList.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Core/DecoratorList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Core/Screen.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Core/Screen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Core/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Core/View.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Core/ViewGroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Core/ViewGroup.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Core/sStarGui.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Core/sStarGui.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Decorator/Border.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Decorator/Border.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Decorator/DividingLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Decorator/DividingLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Input/KeyListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Input/KeyListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/View/RootView.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/View/RootView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/View/TextField.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/View/TextField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Core/Decorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Core/Decorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Core/DecoratorList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Core/DecoratorList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Core/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Core/Screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Core/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Core/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Core/ViewGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Core/ViewGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Core/sStarGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Core/sStarGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Decorator/Border.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Decorator/Border.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Decorator/DividingLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Decorator/DividingLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Input/KeyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Input/KeyListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/View/RootView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/View/RootView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/View/TextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/View/TextField.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="221" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="ProjectId" id="1SgkHqESbQQQgMMQWw15mVsS3Aa" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="添加" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="last_opened_file_path" value="F:/Git/bin/git.exe" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="应用程序" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="top.gytf.sStar.Main" />
+      <module name="sStarGUI.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="67181fca-1e00-4283-8121-c67290e6e12a" name="默认的" comment="" />
+      <created>1571992541174</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1571992541174</updated>
+    </task>
+    <task id="LOCAL-00001" summary="test git">
+      <created>1573202299702</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1573202299703</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="test git" />
+    <option name="LAST_COMMIT_MESSAGE" value="test git" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/sStarGUI$Main.ic" NAME="Main Coverage Results" MODIFIED="1572697842742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
