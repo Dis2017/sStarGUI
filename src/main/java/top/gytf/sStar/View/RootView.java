@@ -74,7 +74,7 @@ public class RootView extends LinearLayout {
 	}
 	
 	public void setFocusView(View focusView) {
-		if (!focusView.isFocusable()) {
+		if (!focusView.isFocusable() || focusView == mFocusView) {
 			return;
 		}
 		if (mFocusView != null) {

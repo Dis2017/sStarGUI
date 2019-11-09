@@ -318,11 +318,11 @@ public abstract class View {
 		return mBounds.width - mPaddingBounds.x - mPaddingBounds.width;
 	}
 	
-	private int getContentX() {
+	public int getContentX() {
 		return mPaddingBounds.x;
 	}
 	
-	private int getContentY() {
+	public int getContentY() {
 		return mPaddingBounds.y;
 	}
 	

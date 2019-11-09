@@ -27,6 +27,7 @@ public class ViewGroup extends View {
 		this.mOldMouseY = 0;
 		setWidthMeasureMode(MeasureMode.wrap_content);
 		setHeightMeasureMode(MeasureMode.wrap_content);
+		setFocusable(false);
 //		setBackgroundColor(new Color(0, 0, 0, 0));
 //		setMarginBounds(new Bounds(5, 5, 5, 5));
 	}

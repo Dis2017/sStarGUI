@@ -13,7 +13,7 @@ import java.awt.image.BufferedImage;
  * @project sStarGUI
  * @describe
  */
-public class Main extends JFrame implements MouseListener, MouseMotionListener, MouseWheelListener, KeyListener {
+public class Main extends JFrame implements MouseListener, MouseMotionListener, MouseWheelListener, KeyListener, InputMethodListener {
 	
 	private static final String tag = "top.gytf.sStar.Main";
 	
@@ -32,6 +32,7 @@ public class Main extends JFrame implements MouseListener, MouseMotionListener, 
 		addMouseListener(Main.this);
 		addMouseMotionListener(Main.this);
 		addKeyListener(this);
+		addInputMethodListener(this);
 		
 //		new Thread() {
 //
@@ -137,6 +138,17 @@ public class Main extends JFrame implements MouseListener, MouseMotionListener, 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		mGui.input(new top.gytf.sStar.Input.KeyEvent(e, top.gytf.sStar.Input.KeyEvent.STATE_UP));
+	}
+	
+	@Override
+	public void inputMethodTextChanged(InputMethodEvent event) {
+		System.out.println("55");;
+	}
+	
+	@Override
+	public void caretPositionChanged(InputMethodEvent event) {
+		System.out.println("event.paramString()");;
+	
 	}
 	
 	private class Canvas implements top.gytf.sStar.Core.Canvas {
