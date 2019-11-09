@@ -39,12 +39,14 @@ public class TextField extends View {
 	private float mTipsFontSize;
 	private boolean mShowCursor;
 	private Color mCursorColor;
+	private int mShowTextLeftOffset;
 	private int mCursorIndex;
 	private int mSelectCount;
 	private Color mSelectForegroundColor;
 	private Color mSelectBackgroundColor;
 	private int mDownX, mDownY;
 	private boolean mDown;
+	private int mDrawTextAreaWidth;
 	
 	private String mTipsText;
 	
@@ -67,12 +69,14 @@ public class TextField extends View {
 		mTipsFontSize = 12;
 		mShowCursor = true;
 		mCursorColor = Color.BLACK;
+		mShowTextLeftOffset = 0;
 		mCursorIndex = 0;
 		mSelectCount = 0;
 		mSelectForegroundColor = mTipsColor;
 		mSelectBackgroundColor = Color.WHITE;
 		mDownX = mDownY = 0;
 		mDown = false;
+		mDrawTextAreaWidth = 0;
 		
 		mTipsText = "";
 		
@@ -153,6 +157,8 @@ public class TextField extends View {
 		graphics.drawString(mTipsText, width, (getHeight() + metrics.getAscent()) / 2);
 		
 		//绘制文字
+		mDrawTextAreaWidth = width;
+		graphics = graphics.create(0, 0, mDrawTextAreaWidth, getContentHeight());
 		graphics.setColor(mFontColor);
 		if (mFont != null) {
 			graphics.setFont(mFont.deriveFont(mFontSize));
@@ -160,18 +166,36 @@ public class TextField extends View {
 			graphics.setFont(graphics.getFont().deriveFont(mFontSize));
 		}
 		mTextMetrics = graphics.getFontMetrics();
-		int x = 0;
-		switch (mTextAlign) {
-			case Center: {
-				x = (width - mTextMetrics.stringWidth(mText)) / 2;
-			} break;
-			case Right: {
-				x = width - mTextMetrics.stringWidth(mText);
-			} break;
+		//文字绘制时的x
+		int x;
+		//文字宽度未超过可绘制位置的宽度
+		if (mTextMetrics.stringWidth(mText) < mDrawTextAreaWidth) {
+			//应用重力
+			switch (mTextAlign) {
+				case Center: {
+					x = (mDrawTextAreaWidth - mTextMetrics.stringWidth(mText)) / 2;
+				} break;
+				case Right: {
+					x = mDrawTextAreaWidth - mTextMetrics.stringWidth(mText);
+				} break;
+				default: {
+					x = 0;
+				} break;
+			}
+		}
+		//超过了，使用mShowTextLeftOffset
+		else {
+			//-1为了留出光标位置
+			x = -mShowTextLeftOffset - 1;
+		}
+		//光标位置
+		int cx = mTextMetrics.stringWidth(mText.substring(0, mCursorIndex)) + x;
+		if (cx <= 0 && mCursorIndex > 0) {
+			cx = 0;
+			x += mTextMetrics.stringWidth(mText.substring(mCursorIndex - 1, mCursorIndex));
 		}
 		graphics.drawString(mText, x, (getContentHeight() + mTextMetrics.getAscent()) / 2);
 		
-		int cx = mTextMetrics.stringWidth(mText.substring(0, mCursorIndex));
 		int sw;
 		int sx = cx;
 		String selText;
@@ -200,28 +224,39 @@ public class TextField extends View {
 	public void handleMouseInput(MouseEvent event) {
 		super.handleMouseInput(event);
 		int width = mTextMetrics.stringWidth(mText);
+		//按下时设置光标位置
 		if (event.getWhat() == MouseEvent.WHAT_DOWN) {
+			//记录按下的位置为拖动做铺垫
 			mDownX = event.getX();
 			mDownY = event.getY();
 			mDown = true;
+			//取消选中
 			mSelectCount = 0;
+			//设置光标位置
 			if (mTextMetrics != null) {
 				if (mDownX >= getContentX() && mDownX <= getContentX() + getContentWidth() && mDownY >= getContentY() && mDownY <= getContentY() + getContentHeight()) {
-					setCursorIndex(Math.min((int) (((float) mDownX / width) * mText.length()), mText.length()));
+					setCursorIndex(Math.min((int) (((float) (mDownX + mShowTextLeftOffset) / width) * mText.length()), mText.length()));
 				}
 			}
-		} else if (event.getWhat() == MouseEvent.WHAT_UP) {
+		}
+		//记录弹起
+		else if (event.getWhat() == MouseEvent.WHAT_UP) {
 			mDown = false;
-		} else if (event.getWhat() == MouseEvent.WHAT_DRAG) {
+		}
+		//拖动时设置选择文本及光标位置
+		else if (event.getWhat() == MouseEvent.WHAT_DRAG) {
 			int x = event.getX();
 			int y = event.getY();
+			//设置选中及移动光标
 			if (x >= getContentX() && x <= getContentX() + getContentWidth() && y >= getContentY() && y <= getContentY() + getContentHeight()) {
-				int nowIndex = Math.min((int) (((float) x / width) * mText.length()), mText.length());
-				int downIndex = Math.min((int) (((float) mDownX / width) * mText.length()), mText.length());
+				int nowIndex = Math.min((int) (((float) (x + mShowTextLeftOffset) / width) * mText.length()), mText.length());
+				int downIndex = Math.min((int) (((float) (mDownX + mShowTextLeftOffset) / width) * mText.length()), mText.length());
 				mCursorIndex = nowIndex;
 				mSelectCount = downIndex - nowIndex;
 			}
-		} else if (event.getWhat() == MouseEvent.WHAT_CLICK && event.getClickCount() % 2 == 0) {
+		}
+		//单击2的倍数次可选择全部
+		else if (event.getWhat() == MouseEvent.WHAT_CLICK && event.getClickCount() % 2 == 0) {
 			mCursorIndex = 0;
 			mSelectCount = mText.length();
 		}
@@ -293,6 +328,7 @@ public class TextField extends View {
 						//删除选中文本
 						deleteSelText();
 					}
+					//移动显示定位
 					
 				} break;
 			}
@@ -312,23 +348,20 @@ public class TextField extends View {
 			mCursorIndex++;
 		}
 		
+		//移动显示的定位
+		resetShowTextLeftOffset();
 	}
 	
-	private boolean isChinese(char ch) {
-		//获取此字符的UniCodeBlock
-		Character.UnicodeBlock ub = Character.UnicodeBlock.of(ch);
-		if (ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS
-				|| ub == Character.UnicodeBlock.CJK_COMPATIBILITY_IDEOGRAPHS
-				|| ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A
-				|| ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B
-				|| ub == Character.UnicodeBlock.CJK_SYMBOLS_AND_PUNCTUATION         // 判断中文的。号
-				|| ub == Character.UnicodeBlock.HALFWIDTH_AND_FULLWIDTH_FORMS       // 判断中文的，号
-				|| ub == Character.UnicodeBlock.GENERAL_PUNCTUATION                 // 判断中文的“号
-		){
-			System.out.println(ch + " 是中文");
-			return true;
+	private void resetShowTextLeftOffset() {
+		int cursorBeforeWidth = mTextMetrics.stringWidth(mText.substring(0, mCursorIndex));
+		int cursorX = cursorBeforeWidth - mShowTextLeftOffset;
+		if (mTextMetrics != null && cursorX > mDrawTextAreaWidth) {
+			mShowTextLeftOffset = cursorBeforeWidth - mDrawTextAreaWidth;
+			System.out.println(mShowTextLeftOffset);
+		} else if (mTextMetrics != null && cursorX < 0) {
+			//-1为了留出光标位置
+			mShowTextLeftOffset = cursorBeforeWidth - 1;
 		}
-		return false;
 	}
 	
 	private void deleteSelText() {
@@ -339,6 +372,19 @@ public class TextField extends View {
 			mCursorIndex += mSelectCount;
 		}
 		mSelectCount = 0;
+	}
+	
+	private boolean isChinese(char ch) {
+		//获取此字符的UniCodeBlock
+		Character.UnicodeBlock ub = Character.UnicodeBlock.of(ch);
+		// 判断中文的“号
+		return ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS
+				|| ub == Character.UnicodeBlock.CJK_COMPATIBILITY_IDEOGRAPHS
+				|| ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A
+				|| ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B
+				|| ub == Character.UnicodeBlock.CJK_SYMBOLS_AND_PUNCTUATION         // 判断中文的。号
+				|| ub == Character.UnicodeBlock.HALFWIDTH_AND_FULLWIDTH_FORMS       // 判断中文的，号
+				|| ub == Character.UnicodeBlock.GENERAL_PUNCTUATION;
 	}
 	
 	private boolean isLetter(KeyEvent event) {
