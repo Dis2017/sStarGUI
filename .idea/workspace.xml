@@ -13,9 +13,10 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Main$Canvas.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Main$Canvas.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Main$mPane.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Main$mPane.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Style/DefaultStyle.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/Style/DefaultStyle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/View/TextField$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/View/TextField$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/View/TextField.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/top/gytf/sStar/View/TextField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Style/DefaultStyle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/Style/DefaultStyle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/View/TextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/gytf/sStar/View/TextField.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

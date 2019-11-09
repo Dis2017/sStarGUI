@@ -48,6 +48,18 @@ public class DefaultStyle extends Style {
 		//TextField
 		attribute = get(TextField.class);
 		attribute.set(Style.BACKGROUND_COLOR, new Color(0, 0, 0, 0));
+		attribute.set(TextField.NAME_BOTTOM_LINE_COLOR_UN_FOCUS, Color.GRAY);
+		attribute.set(TextField.NAME_BOTTOM_LINE_SIZE_UN_FOCUS, 1);
+		attribute.set(TextField.NAME_BOTTOM_LINE_COLOR_FOCUS, getBaseAttribute().get(BACKGROUND_COLOR, Color.BLACK, false));
+		attribute.set(TextField.NAME_BOTTOM_LINE_SIZE_FOCUS, 2);
+		attribute.set(TextField.NAME_TIPS_COLOR_FOCUS, getBaseAttribute().get(BACKGROUND_COLOR, Color.BLACK, false));
+		attribute.set(TextField.NAME_TIPS_SIZE_FOCUS, 12f);
+		attribute.set(TextField.NAME_TIPS_COLOR_UN_FOCUS, Color.GRAY);
+		attribute.set(TextField.NAME_TIPS_SIZE_UN_FOCUS, 12f);
+		attribute.set(TextField.NAME_SHOW_MAX_LENGTH, true);
+		attribute.set(TextField.NAME_MAX_LENGTH, 50);
+		attribute.set(TextField.NAME_SHOW_TEXT_LENGTH, true);
+		attribute.set(TextField.NAME_TEXT_ALIGN, Align.Left);
 		
 		//RootView
 		attribute = get(RootView.class);
